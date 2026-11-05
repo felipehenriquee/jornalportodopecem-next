@@ -1,0 +1,27 @@
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy-900);
+}
+.brand.claro {
+  color: #fff;
+}
+.txt {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.jornal {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  color: var(--teal-500);
+}
+.claro .jornal {
+  color: var(--teal-400);
+}
+.porto {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}

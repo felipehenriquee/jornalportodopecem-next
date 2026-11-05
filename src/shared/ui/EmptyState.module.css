@@ -1,0 +1,10 @@
+.vazio {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.vazio strong { color: var(--text); }
+.vazio p { margin: 0 0 8px; font-size: var(--fs-sm); }

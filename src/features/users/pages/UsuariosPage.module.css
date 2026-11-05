@@ -1,0 +1,70 @@
+.pessoa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pessoa div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.pessoa :global(.muted) {
+  font-size: var(--fs-xs);
+}
+.av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: #fff;
+  background: var(--navy-700);
+  flex: none;
+}
+.av.admin { background: var(--navy-900); }
+.av.editor { background: var(--teal-600); }
+.av.colunista { background: var(--sand-500); }
+.av.comercial { background: var(--ink-700); }
+.ativo {
+  color: var(--success-600);
+  font-weight: 500;
+}
+.papeis {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.papeis legend {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+.papel {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--fs-sm);
+}
+.papel span {
+  font-size: var(--fs-xs);
+}
+.papel.sel {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.papel:has(input:focus-visible) {
+  box-shadow: var(--focus);
+}
+.acoes {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}

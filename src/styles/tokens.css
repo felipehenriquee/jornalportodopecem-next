@@ -1,0 +1,122 @@
+/*
+ * Design tokens — Jornal Porto do Pecém · Painel da Redação
+ * Cores extraídas do site público (jornalportodopecem.com.br):
+ *   marinho  #142248  → barra de navegação do site
+ *   petróleo #009999  → logo "JORNAL", rótulos de editoria, botão de busca
+ *   texto    #212529  → corpo do site
+ *   névoa    #F7F9FC  → fundo de blocos (anúncio)
+ * Use SEMPRE as variáveis abaixo; nunca hex soltos nos componentes.
+ */
+:root {
+  /* Marca */
+  --navy-950: #0b1430;
+  --navy-900: #142248;
+  --navy-800: #1d2f5e;
+  --navy-700: #2a3f74;
+  --navy-100: #e3e8f3;
+
+  --teal-700: #007373;
+  --teal-600: #008585;
+  --teal-500: #009999;
+  --teal-400: #1fb3b3;
+  --teal-100: #d9f2f2;
+  --teal-50: #eef9f9;
+
+  /* Rosa-dos-ventos do logo usa areia como acento secundário */
+  --sand-500: #c9a14a;
+  --sand-100: #f6eedc;
+
+  /* Neutros */
+  --ink-900: #212529;
+  --ink-700: #495057;
+  --ink-500: #7a869c;
+  --ink-400: #9aa3b5;
+  --ink-300: #c9cfdb;
+  --ink-200: #e2e6ee;
+  --ink-100: #eef1f6;
+  --mist: #f7f9fc;
+  --white: #ffffff;
+
+  /* Semânticas */
+  --success-600: #1e8e5a;
+  --success-100: #dcf3e7;
+  --warning-600: #b7791f;
+  --warning-100: #fbf0d9;
+  --danger-600: #c0392b;
+  --danger-100: #fbe3e0;
+  --info-600: var(--navy-700);
+  --info-100: var(--navy-100);
+
+  /* Superfícies (tema claro) */
+  --bg: #f2f5f9;
+  --surface: var(--white);
+  --surface-sunken: var(--mist);
+  --border: var(--ink-200);
+  --border-strong: var(--ink-300);
+  --text: var(--ink-900);
+  --text-muted: var(--ink-500);
+  --text-soft: var(--ink-700);
+  --accent: var(--teal-500);
+  --accent-hover: var(--teal-600);
+  --accent-soft: var(--teal-50);
+  --focus: 0 0 0 3px rgba(0, 153, 153, 0.28);
+
+  /* Sidebar sempre marinho, como a navbar do site */
+  --sidebar-bg: var(--navy-900);
+  --sidebar-text: rgba(255, 255, 255, 0.72);
+  --sidebar-text-active: #ffffff;
+  --sidebar-hover: rgba(255, 255, 255, 0.06);
+  --sidebar-active: rgba(0, 153, 153, 0.18);
+
+  /* Tipografia */
+  --font-ui: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-headline: 'Roboto Serif', Georgia, serif;
+  --font-mono: 'Roboto Mono', ui-monospace, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-md: 0.9375rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+
+  /* Espaço, raio, sombra */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 34, 72, 0.06);
+  --shadow: 0 1px 3px rgba(20, 34, 72, 0.08), 0 4px 12px rgba(20, 34, 72, 0.05);
+  --shadow-lg: 0 12px 32px rgba(20, 34, 72, 0.18);
+
+  --sidebar-w: 248px;
+  --topbar-h: 60px;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b1226;
+  --surface: #121b35;
+  --surface-sunken: #0e1630;
+  --border: #22305a;
+  --border-strong: #2f3f6e;
+  --text: #e8ecf5;
+  --text-muted: #8f9bb8;
+  --text-soft: #b9c2d6;
+  --accent: var(--teal-400);
+  --accent-hover: #3cc4c4;
+  --accent-soft: rgba(0, 153, 153, 0.14);
+  --sidebar-bg: #08102a;
+  --success-100: rgba(30, 142, 90, 0.18);
+  --warning-100: rgba(183, 121, 31, 0.2);
+  --danger-100: rgba(192, 57, 43, 0.2);
+  --info-100: rgba(42, 63, 116, 0.45);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}

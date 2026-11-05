@@ -1,0 +1,27 @@
+.host {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+  max-width: 380px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--navy-900);
+  color: #fff;
+  font-size: var(--fs-sm);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--teal-400);
+}
+.toast.erro { border-left-color: #ff8a7a; }
+.toast.info { border-left-color: var(--sand-500); }
+.toast { animation: entrar 0.2s ease; }
+@keyframes entrar { from { opacity: 0; transform: translateY(8px); } }

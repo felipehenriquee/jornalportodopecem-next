@@ -1,0 +1,21 @@
+.ph {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-5);
+}
+.ph h1 {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.01em;
+}
+.sub {
+  margin: 4px 0 0;
+  font-size: var(--fs-sm);
+}
+.acoes {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}

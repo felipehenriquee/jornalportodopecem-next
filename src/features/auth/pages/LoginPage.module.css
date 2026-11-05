@@ -1,0 +1,98 @@
+.login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.arte {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  background: radial-gradient(120% 90% at 0% 100%, rgba(0, 153, 153, 0.45), transparent 60%), var(--navy-900);
+  color: #fff;
+}
+
+/* Linhas de navegação / ondas sutis */
+.ondas {
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(circle at 85% 20%, transparent 0 38px, rgba(255, 255, 255, 0.045) 38px 39px);
+  pointer-events: none;
+}
+
+.frase {
+  position: relative;
+  max-width: 460px;
+}
+
+.frase :global(.eyebrow) {
+  color: var(--teal-400);
+}
+
+.frase h1 {
+  font-family: var(--font-headline);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 12px;
+}
+
+.rodape {
+  position: relative;
+  margin: 0;
+  font-size: var(--fs-xs);
+  opacity: 0.6;
+}
+
+.form-lado {
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.form {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+  box-shadow: var(--shadow);
+}
+
+.form h2 {
+  font-size: var(--fs-xl);
+}
+
+.form p {
+  margin: 4px 0 0;
+}
+
+.entrar {
+  height: 44px;
+  font-size: var(--fs-md);
+}
+
+.erro {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--danger-100);
+  color: var(--danger-600);
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 860px) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .arte {
+    padding: 28px;
+    min-height: 220px;
+  }
+  .frase h1 {
+    font-size: 1.6rem;
+  }
+}

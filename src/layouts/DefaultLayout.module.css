@@ -1,0 +1,220 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-4);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  overflow-y: auto;
+}
+
+/* Faixa petróleo no topo, ecoando a linha do logo */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal-500), var(--teal-400) 60%, var(--sand-500));
+}
+
+.topo {
+  padding: 0 var(--sp-2);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  flex: 1;
+}
+
+.grupo-titulo {
+  margin: 0 0 6px;
+  padding: 0 var(--sp-3);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 38px;
+  padding: 0 var(--sp-3);
+  border-radius: var(--radius-sm);
+  color: var(--sidebar-text);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.item:hover {
+  background: var(--sidebar-hover);
+  color: #fff;
+}
+
+.item.ativo {
+  background: var(--sidebar-active);
+  color: var(--sidebar-text-active);
+}
+
+.item.ativo::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--teal-400);
+}
+
+.item.ativo svg {
+  color: var(--teal-400);
+}
+
+.site {
+  font-size: var(--fs-xs);
+  height: 32px;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.avatar {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal-500);
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.quem {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  line-height: 1.25;
+}
+
+.quem strong {
+  color: #fff;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quem span {
+  font-size: var(--fs-xs);
+}
+
+.sair {
+  border: 0;
+  background: none;
+  color: var(--sidebar-text);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+
+.sair:hover {
+  color: #fff;
+  background: var(--sidebar-hover);
+}
+
+.main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-6);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.data {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+  font-size: var(--fs-sm);
+}
+
+.local {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.menu,
+.veu {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    z-index: 60;
+    width: var(--sidebar-w);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+  .aberta .sidebar {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+  }
+  .aberta .veu {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(11, 20, 48, 0.45);
+  }
+  .menu {
+    display: inline-flex;
+  }
+  .topbar {
+    padding: 0 var(--sp-4);
+  }
+  .data :global(.muted) {
+    display: none;
+  }
+}
